@@ -1,0 +1,14 @@
+{
+  "firstName": "Konstantine",
+  "lastName": "Tsurtsumia",
+  "languages": [
+    {"title": "C++", "level":  "intermediate"},
+    {"title": "C#", "level":  "advanced"},
+    {"title": "JS", "level":  "intermediate"},
+    {"title": "Node.js", "level":  "basic"},
+    {"title": "Java", "level":  "intermediate"},
+    {"title": "Kotlin", "level":  "basic"},
+    {"title": "HTML/CSS", "level":  "intermediate"},
+    {"title": "Python", "level":  "advanced"}
+  ]
+}

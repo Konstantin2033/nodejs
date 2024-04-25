@@ -1,0 +1,21 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "playground/index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "renderway"
+  },
+  "keywords": [
+    "keywod"
+  ],
+  "author": "Konstantin",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}

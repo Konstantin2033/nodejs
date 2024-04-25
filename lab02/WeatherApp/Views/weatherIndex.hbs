@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather</title>
+    <style>
+        body, html{
+            height: 100%;
+        }
+        .base{
+            height: 100vh;
+            width: 75%;
+            margin: auto;
+        }
+        .topDiv{
+            width: 100%;
+            height: 10%;
+            background: #f4f4f4;
+            display: flex;
+            margin-top: 30px;
+            margin-bottom: 50px;
+            border-radius: 10px;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        .contentDiv{
+            width: 100%;
+            height: 100%;
+            display: flex;
+        }
+        .infoDiv{
+            width: 100%;
+            height: 60%;
+            border: 1px solid lightgray;
+            border-radius: 10px;
+            margin-left: 40px;
+            padding: 10px;
+        }
+        .topText{
+            font-family: sans-serif;
+            font-size: 24px;
+            margin-right: 20px;
+            margin-left: 20px;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        a:hover{
+            color: darkgray;
+        }
+
+
+        .buttonsTable {
+            border-collapse: collapse;
+            width: 25%;
+            height: 30%;
+        }
+        .infoTable{
+            width: 100%;
+            height: 40%;
+            border-collapse: collapse;
+        }
+
+        td {
+            border: 1px solid #ccc;
+            text-align: start;
+        }
+
+        .button {
+            display: block;
+            width: 100%;
+            background-color: white;
+            text-align: start;
+            font-family: sans-serif;
+            font-size: 16px;
+            color: #000;
+            border: none;
+            padding: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .button:active {
+            background-color: #007bff;
+            color: #fff;
+        }
+        .infoText{
+            text-align: start;
+            font-family: sans-serif;
+            font-size: 16px;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+<div class="base">
+    <div class="topDiv">
+        <p class="topText"> <strong>WeatherInfo</strong></p>
+        <p class="topText"> <a href="">Home</a></p>
+        <p class="topText"> <a href="">Weather</a></p>
+    </div>
+
+    <div class="contentDiv">
+        <table class="buttonsTable">
+            <tr>
+                <td><button class="button">Kyiv</button></td>
+            </tr>
+            <tr>
+                <td><button class="button">Vinnytsia</button></td>
+            </tr>
+            <tr>
+                <td><button class="button">Zhytomyr</button></td>
+            </tr>
+            <tr>
+                <td><button class="button">Odesa</button></td>
+            </tr>
+            <tr>
+                <td><button class="button">Lviv</button></td>
+            </tr>
+            <tr>
+                <td><button class="button">Kharkiv</button></td>
+            </tr>
+        </table>
+
+        <div class="infoDiv">
+            <p class="topText"> <strong>Погода в місті {{city}}</strong></p>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxtxquoyXZug5xEhVTGYH_2iGfpQg22WESS4vQ03oV0WQL1yjfr06elgRGf5S9gttkcvI&usqp=CAU">
+            <table class="infoTable">
+                <tr>
+                    <td class="infoText" style="padding-left: 10px">Тиск</td>
+                    <td class="infoText" style="padding-left: 10px">{{pressure}} мм р.с</td>
+                </tr>
+                <tr>
+                    <td class="infoText" style="padding-left: 10px">Вологість</td>
+                    <td class="infoText" style="padding-left: 10px">{{humidity}}%</td>
+                </tr>
+                <tr>
+                    <td class="infoText" style="padding-left: 10px">Температура</td>
+                    <td class="infoText" style="padding-left: 10px">{{temperature}}°C</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+    const buttons = document.querySelectorAll('.button');
+
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            const city = button.textContent.trim();
+            window.location.href = `http://localhost:3000/weather/${city}`;
+        });
+    });
+</script>
+</body>
+</html>
